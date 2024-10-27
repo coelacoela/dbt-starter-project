@@ -1,9 +1,9 @@
 select
     id as payment_id,
-    orderid as payment_orderid,
-    paymentmethod,
-    status,
-    amount,
-    created
+    orderid as order_id,
+    paymentmethod as payment_method,
+    status as status,
+    amount as amount,
+    created as created
 
 from {{ source('stripe', 'payment') }}
