@@ -10,6 +10,10 @@ sources:
             description: One record per customer.
           - name: orders
             description: One record per order. Includes cancelled and deleted orders.
+            loaded_at_field: _etl_loaded_at
+            freshness:
+              warn_after: {count: 1, period: day}
+              error_after: {count: 2, period: day}
     - name: stripe
       description: This is a replica of the Postgres database used by our app
       database: raw
