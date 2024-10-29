@@ -1,6 +1,13 @@
 version: 2
 
 models:
+  - name: fct_orders
+    columns:
+      - name: customer_id
+        data_tests:
+          - relationships:
+              field: customer_id
+              to: ref('stg_jaffle_shop__customers')
   - name: dim_customers
     description: One record per customer
     columns:

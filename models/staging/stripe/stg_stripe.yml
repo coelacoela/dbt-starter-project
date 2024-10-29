@@ -12,10 +12,12 @@ models:
       - name: status
         data_tests:
           - accepted_values:
-              values: ["success", "fail"]
+              values: 
+                - success
+                - fail
       - name: order_id
         data_tests:
           - not_null
           - relationships:
-              to: ref('stg_jaffle_shop__orders')
               field: order_id
+              to: ref('stg_jaffle_shop__orders')
